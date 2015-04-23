@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width" />
+    <meta name="description" content="I am Alex Yakubovich, a data scientist working at a mobile gaming startup in Toronto.">
+    <meta name="keywords" content="Alex,Yakubovich,Data Science,Statistics,Machine Learning, Predictive Analytics">
+    <meta name="author" content="Alex Yakubovich" />
+    <title> Alex Yakubovich, Data Scientist </title>
+    <script type="text/javascript" src="//use.typekit.net/drc5vwp.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css'>
+    <link media="screen" rel="stylesheet" href="colorbox.css" />
+    <link media="screen" rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" href="assets/me-pixels2.png" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.colorbox-min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        var scrolling = false;
+        var offset;
+
+        responsive();
+
+        $(document).scroll(function() {
+          offset = $(document).scrollTop() + 20;
+          $("ul#nav li").each(function() {
+            if (!scrolling && offset + 100 > $("" + $(this).find("a").attr("href")).offset().top) {
+              makeSelected($(this));
+            }
+          });
+        });
+
+        $(window).resize(function(){
+          responsive();
+        });
+
+        $("ul#nav a").click(function(e) {
+          if ($(this).parent().attr("id") == "nav")
+            makeSelected($(this).next().next());
+          else
+            makeSelected($(this).parent());
+          e.preventDefault();
+          scrolling = true;
+	  $("body").animate({scrollTop: $($(this).attr("href")).offset().top}, 500, function() { scrolling = false; } );
+        });
+
+        $("a#email").html("alex.yakubovich@gmail.com");
+        $("a#email").attr("href","mailto:alex.yakubovich@gmail.com");
+
+        $("table#photos td").hover(function(){
+          $(this).find("span.photo-hover").slideDown();
+        }, function() {
+          $(this).find("span.photo-hover").slideUp();
+        });
+
+        function responsive() {
+          if ($(window).width() < 550) {
+            $("ul#nav").hide();
+            $("#header").hide();
+            $("body").css("padding","10px")
+            $("p").css("width","100%")
+	    $("img.screenshot").css("width","100%");
+          } else {
+            $("ul#nav").show();
+            $("#header").show();
+            $("body").css("padding","40px 40px 40px 200px")
+	    $("img.screenshot").css("width","50%");
+          }
+
+        }
+
+        function makeSelected (item) {
+          $("ul#nav li").removeClass("selected");
+          item.addClass("selected");
+        }
+
+        $("table#photos a").colorbox({top:100, speed: 0});
+        $("a#screenshot-yammer").colorbox({top:10, speed:0});
+        $("a#screenshot-commonsku").colorbox({top:10, speed:0});
+        $("a#screenshot-geni").colorbox({iframe:true, innerWidth:600, innerHeight:344, top:10, speed:0});
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <ul id="nav">
+      <!-- <a href="#about-me"><img src="me.png"></a>  !-->
+      <a href="#about-me"><img style="height:112px; width:auto;" src="alex-snow.jpg"></a>
+      <h1>Alex <br/>Yakubovich</h1>
+      <li class="selected"><a href="#about-me">About Me</a></li>
+      <li><a href="#ui-design">Background</a></li>
+      <li><a href="#code">Projects</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#contact">Contact</a></li>      
+    </ul>
+
+    <h2 id="about-me">About Me</h2>
+    <p> I am a data scientist working at <a href = "http://www.uken.com"> Uken Games,</a> a mobile gaming startup based in Toronto.
+
+    These are some things that get me up in the morning:
+    	<ul>
+    	   <li> <strong> Machine learning </strong> </li>    	
+    	   <li> Agile A/B testing </li>
+    	   <li> Data visualization </li> 
+    	   <li> Data science for social good </li>    	   	
+    	</ul>
+    </p>
+
+    <!--I believe in making data analysis accessible.
+
+    I use R for most of my statistics work. !-->
+
+    <h2 id="ui-design"> Background </h2>
+
+    <p> In a previous life, I was a graduate student in applied statistics at York University. I studied in Dr. James Elder's <a href = "http:elderlab.yorku.ca"> Human and Computer Vision Group </a> at the <a href = "http://www.cvr.yorku.ca"> Centre for Vision Research.</a>
+
+    My <a href = "assets/alex-yakubovich-masters-thesis.pdf"> thesis project </a> was on a generative model of two-dimensional shapes based on localized diffeomorphisms of the plane.
+
+    Here are some of my publications: </p>
+
+    <ul>
+		<li>Yakubovich, Alex, and James H. Elder. Building better formlet codes for planar shape. Computer and Robot Vision (CRV), 2014 Canadian Conference on. IEEE, 2014.  <a href = "YakubovichCRV14.pdf"> [PDF] </a> </li>
+
+		<li> Elder, J.H., Oleskiw, T.D., Yakubovich, A. &amp; Peyr&eacute; G. (2013). On growth and formlets:  Sparse multi-scale coding of planar shape. </a>  <em> Image and Vision Computing vol. 31, 1-13. </em> <strong> (editor's choice paper) </strong> <a href = "ElderJIVC13.pdf"> [PDF] </a> </li>
+	</ul>
+
+	I completed my undergraduate degree in Mathematics and Arts and Science at McMaster University.
+
+    <h2 id="code"> Projects </h2>
+
+    <!--
+    <table id="code-table" style="width:50%; table-layout:fixed;">
+      <tr>
+      	<td><a href="https://github.com/uken/testr"><img src="http://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif"></a></td>
+		<td><a href="https://github.com/ayakubovich/EM"><img src="https://github.com/ayakubovich/EM/blob/master/sample-HMM.gif?raw=true"></a></td>        
+        <td><a href="http://elderlab.yorku.ca/formlets/"><img src="assets/rdf.png"></a></td>
+        
+        <td><a href="http://www.livefiddle.com"><img src="http://i.imgur.com/Hbae4.png"></a></td>
+        <td><a href="http://www.yak.nu/lildungeon"><img src="http://i.imgur.com/MklQ4.png"></a></td>        
+      </tr>
+    </table>
+    !-->
+    
+    <ul>      
+      <li><a href="https://github.com/uken/testr"> testr </a> - R package for Bayesian A/B testing</li>
+      <li><a href="https://github.com/ayakubovich/EM">Fun with EM</a> - some toy examples of Gaussian Mixture Models and Hidden Markov Models</li>
+    </ul>
+
+    <h2 id="music">Music</h2>
+
+    <p>I have been playing the Saxophone for 14 years. I trained with Igor Guletsky, who instructed me in different styles - classical, jazz, blues, pop, rock, and klezmer. I recently also started learning the piano. </p>
+
+    <p> I have recently become interested in the intersection of data science and music. I have some projects brewing on computational analysis and visualization of chord progressions in pop music.  </p>
+
+    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/26088339&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+
+    <h2 id="contact">Contact</h2>
+    <ul class="contact-links">
+      <li class="fav-twitter"><a href="http://www.twitter.com/alex_yakubovich">@alex_yakubovich</a></li>
+      <li class="fav-github"><a href="http://www.github.com/ayakubovich">github.com/ayakubovich</a></li>      
+      <li class="fav-linkedin"><a href="http://ca.linkedin.com/in/ayakubovich">ca.linkedin.com/in/ayakubovich</a>
+      <li class="fav-email"><a id="email" href="#"><img src="email.png" style="vertical-align:middle;"></a></li>
+    </ul>
+
+    <div id="spacer">
+    </div>
+  </body>
+</html>

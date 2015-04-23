@@ -1,0 +1,185 @@
+ body {
+        margin: 0;
+        padding: 40px 40px 40px 200px;
+        max-width: 1000px;
+        font-family: 'proxima-nova', 'Helvetica Neue', arial, sans-serif;
+        line-height: 1.5em;
+        background: url(absurdidad.png);
+      }
+
+      a {
+        text-decoration: none;
+        color: #777;
+      }
+
+      img { 
+        border: 0;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul#nav li a:hover {
+        text-decoration: none;
+        background: rgba(0,0,0,.02);
+        -webkit-transition: all .5s;
+        transition: all .5s;
+      }
+
+      p { 
+        font-size: 1.05em;
+      }
+
+      p.small { font-size: 12px; }
+
+      ul#nav li a {
+        color: #666;
+        padding: 5px 10px;
+        display: block;
+        font-size: 1.2em;
+      }
+
+      ul#nav li.selected a {
+        color: red;
+      }
+
+
+      h1 {
+        font-size: 22px;
+        margin: 30px 0;
+      }
+
+      h2 {
+        font-size: 22px;
+        font-family: 'Terminal Dosis', sans-serif;
+        text-transform: uppercase;
+        margin-top: 30px;
+        padding-top: 30px;
+        padding-bottom: 8px;
+        clear: both;
+      }
+
+      h2#about-me {
+        margin-top: 0px;
+        padding-top: 0px;        
+      }
+
+      h3 {
+        font-size: 1.1em;
+        margin-top: 0px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      ul#nav {
+        position: fixed;
+        top: 0; left: 0;
+        font-family: 'Terminal Dosis', sans-serif;
+        text-transform: uppercase;
+        _position: absolute;
+        _margin-left: -10px;
+      }
+
+      ul#nav li {
+        border-left: 2px solid #666;
+        color: #666;
+        list-style: none;
+        margin-bottom: 10px;
+      }
+
+      ul#nav li.selected {
+        color: red; 
+        border-left: 2px solid red;
+      }
+
+      ul {
+        padding-left: 18px;
+      }
+
+      ul#nav img {
+        border-radius: 100px;
+        box-shadow: 0px 0px 4px 1px rgba(0,0,0,.3);
+      }
+
+      table#photos {
+        width: 100%;
+        table-layout: fixed;
+        border-spacing: 0;
+        background: #333;
+      }
+
+      table#photos img, table#code-table img {
+        width: 100%;
+      }
+
+      table#photos td {
+        position: relative;
+        padding: 0;
+      }
+
+      span.photo-hover {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        /*background: rgba(255,255,255,0.8);*/
+        background: rgba(0,0,0,.6);
+        color: white;
+        padding: 10px;
+        /*color: #333;*/
+        box-sizing: border-box;
+        font-size: 14px;
+        width: 100%;
+        font-family: 'Terminal Dosis', sans-serif;
+        display:none;
+      }
+
+      img.screenshot {
+        width: 50%;
+        display: block;
+        margin: auto;
+        float: right;
+        clear:both;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0px 0px 9px rgba(0,0,0,.13);
+        border-radius: 5px;
+        background: white;
+      }
+
+      .contact-links {
+	padding-left: 0;
+      }
+
+      .contact-links li {
+	background-repeat: no-repeat;
+	background-position-y: 3px;
+	padding-left: 24px;
+	list-style: none;
+
+      }
+
+      .contact-links .fav-twitter { background-image: url("favicons/twitter_16.png"); }
+      .contact-links .fav-github { background-image: url("favicons/github_16.png"); }
+      .contact-links .fav-facebook { background-image: url("favicons/facebook_16.png"); }
+      .contact-links .fav-google { background-image: url("favicons/google_plus_16.png"); }
+      .contact-links .fav-linkedin { background-image: url("favicons/linkedin_16.png"); }
+      .contact-links .fav-email { background-image: url("favicons/email_16.png"); }
+
+      #cboxoverlay {
+        opacity: 1 !important;
+      }
+
+      #cboxcontent {
+        height: 676px !important;
+      }
+
+      div#spacer {
+        height: 700px;
+      }
+
+      div.clear {
+        clear: both;
+      }
