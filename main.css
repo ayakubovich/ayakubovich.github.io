@@ -102,53 +102,6 @@
         box-shadow: 0px 0px 4px 1px rgba(0,0,0,.3);
       }
 
-      table#photos {
-        width: 100%;
-        table-layout: fixed;
-        border-spacing: 0;
-        background: #333;
-      }
-
-      table#photos img, table#code-table img {
-        width: 100%;
-      }
-
-      table#photos td {
-        position: relative;
-        padding: 0;
-      }
-
-      span.photo-hover {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        /*background: rgba(255,255,255,0.8);*/
-        background: rgba(0,0,0,.6);
-        color: white;
-        padding: 10px;
-        /*color: #333;*/
-        box-sizing: border-box;
-        font-size: 14px;
-        width: 100%;
-        font-family: 'Terminal Dosis', sans-serif;
-        display:none;
-      }
-
-      img.screenshot {
-        width: 50%;
-        display: block;
-        margin: auto;
-        float: right;
-        clear:both;
-        margin-left: 30px;
-        margin-bottom: 30px;
-        border: 1px solid #ddd;
-        padding: 5px;
-        box-shadow: 0px 0px 9px rgba(0,0,0,.13);
-        border-radius: 5px;
-        background: white;
-      }
-
       .contact-links {
 	padding-left: 0;
       }
