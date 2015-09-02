@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\title{Setting priors based using historical data}
+\author{Alex Yakubovich}
+
+\begin{document}
+\maketitle
+\section{Beta-Binomial Model}\label{sec:bb-model}
+A beta prior can be parameterized in terms of an expected conversion rate $m$ and a shape parameter $\beta$. The former can be estimated from historical data.  The mode of the beta distribution is 
+$$m = \frac{\alpha - 1}{\alpha + \beta -2}$$
+If $\alpha$ is fixed, we can easily find a value of $\beta$ that satisfies this equation:
+\begin{align}
+\alpha - 1 &= m(\alpha + \beta - 2) \\
+&= m\alpha + m\beta - 2m
+\end{align}
+
+Solving for $\beta$:
+\begin{align}
+\beta &= \frac{\alpha - 1 - m\alpha + 2m}{m} \\
+&= 2 - \alpha + \frac{1}{m}\left(\alpha-1\right) \label{eq:beta}
+\end{align}
+
+Thus, the prior is specified by first learning the expected conversion rate from historical data, and then mapping it to $\beta$ using equation \ref{eq:beta}. $\alpha$ can be chosen to give the desired variance of the, which can be determined graphically. The variance of the prior increases with $\alpha$. 
+
+\section{Zero-Inflated Log-normal model}
+
+The conversion component of this model is just another beta-binomial model, so we can specify $(\alpha, \beta)$ as per section \ref{sec:bb-model}. The second component of the model describes the revenue amongst spenders. %Recall the model:
+%\subsection{Prior}
+The prior distribution is specified as a product of a conditional and marginal distribution:
+\begin{align}
+\sigma^2 &\sim \text{Inv}\chi^2 (\nu_0, \sigma^2_0) \Leftrightarrow \text{Inv-Gamma}\left(\frac{\nu_0}{2}, \frac{\nu_0 \sigma^2_0}{2} \right) \label{eq:inv-gamma-prior}\\
+\mu | \sigma^2, \text{data} &\sim \mathcal{N} \left(\mu_0, \frac{\sigma^2}{\kappa_0} \right)
+\end{align}
+
+%\subsection{Posterior}
+%\begin{align}
+%\sigma^2 | \log(\text{data}) &\sim \text{Inv}\chi^2 (\nu_n, \sigma^2_n) \\
+%\mu | \log(\text{data}), \sigma^2 &\sim \mathcal{N} \left(\mu_n, \frac{\sigma^2}{\kappa_n}\right)
+%\end{align}
+
+The prior is specified is defined over $\sigma^2, \mu | \sigma^2$.  We can summarize the prior over $\sigma^2$ by it's mode. The mode of the inverse gamma prior (Equation \ref{eq:inv-gamma-prior}) is given by:
+\begin{align}
+\sigma^2_m &= \frac{\beta}{\alpha + 1}, \text{ where } \alpha=\nu_0/2, \beta=\nu_0 \sigma^2_0/2 \\
+&= \frac{\nu_0 \sigma^2}{\nu_0/2 + 1} \\
+&= \frac{\nu_0 \sigma^2_0}{\nu_0 + 2}
+\end{align}
+
+Next, set the expected value  of the prior to the average revenue amongst spenders from historical data, call it $\mu_{obs}$:
+\begin{align}
+\log \mu_{obs} &= \mathbb{E} [\mu | \sigma^2, \log(\text{data})] \\
+&= \mu_0 + \frac{\sigma^2_m}{2} \\
+\mu_0 &= \log \mu_{obs} - \frac{\sigma^2_m}{2} \\
+&= \log{\mu_{obs}} - \frac{1}{2} \left[\frac{\nu_0 \sigma^2_0}{\nu_0 + 2} \right] \label{eq:mu0-hyperparameter}
+\end{align}
+Thus, using equation \ref{eq:mu0-hyperparameter} we can parameterize the hyperparameter $\mu_0$ using the historical revenue amongst spenders $\mu_{obs}$.
+\end{document}
