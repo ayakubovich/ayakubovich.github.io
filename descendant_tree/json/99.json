@@ -1,0 +1,97 @@
+{
+  "name": "Marisa",
+  "bio":"bio",
+  "image":"images/99/marisa.jpg",
+  "children":[
+    {
+      "name":"Yak",
+      "bio":"bio",
+      "image":"images/99/yak.jpg",
+      "children": [
+        {
+          "name":"Sara S.",
+          "bio":"bio",
+          "image":"images/99/sara-stoj.jpg"    
+        }
+      ]
+    },
+    {
+      "name":"Chet",
+      "bio":"bio",
+      "image":"images/99/chet.jpg"
+    },
+    {
+      "name":"Matt",
+      "bio":"bio",
+      "image":"images/99/matt.jpg",
+      "children": [
+        {
+          "name":"Izzy",
+          "bio":"bio",
+          "image":"images/99/izzy.jpg"    
+        },
+        {
+          "name":"Baye",
+          "bio":"bio",
+          "image":"images/99/baye.jpg"    
+        }
+      ]
+    },
+    {
+      "name":"Marie-Claire",
+      "bio":"bio",
+      "image":"images/99/mc.jpg",
+      "children": [
+        {
+          "name":"Elise",
+          "bio":"bio "
+        }
+      ]
+    },
+    {
+      "name":"Sabi",
+      "bio":"bio",
+      "image":"images/99/sabi.jpg",
+      "children": [
+        {
+          "name":"Dylan",
+          "bio":"bio",
+          "image":"images/99/dylan.jpg"    
+        }
+      ]
+    },
+
+    {
+      "name":"Julia",
+      "bio":"bio",
+      "image":"images/99/julia.jpg",
+      "children": [
+        {
+          "name":"Joel",
+          "bio":"bio",
+          "image":"images/99/joel.jpg",    
+          "children": [
+            {
+              "name":"Ryan",
+              "bio":"bio",
+              "image":"images/99/ryan.jpg"    
+            }
+          ]
+        },
+        {
+          "name":"Sara G.",
+          "bio":"bio",
+          "image":"images/99/sara.jpg",    
+          "children": [
+            {
+              "name":"Ian",
+              "bio":"bio  
+            }
+          ]
+        }
+      ]
+    }
+
+    ]
+
+  }
